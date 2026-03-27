@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Fake News Detector | AI-Powered Authenticity Check</title>
+    <link rel="stylesheet" href="UI.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    <div class="container">
+        <header class="hero">
+            <div class="badge">AI-POWERED ANALYSIS</div>
+            <h1 class="title">Fake News <span class="gold">Detector</span></h1>
+            <p class="subtitle">Advanced machine learning to verify credibility · Real-time classification</p>
+        </header>
+
+        <main>
+            <div class="card glass-card">
+                <div class="input-group">
+                    <label for="newsText">
+                        <span class="label-icon">📰</span> News Content
+                    </label>
+                    <textarea id="newsText" rows="6" placeholder="Paste the news article text here... (minimum 10 characters)"></textarea>
+                    <div class="char-counter"><span id="charCount">0</span> characters</div>
+                </div>
+
+                <div class="input-group">
+                    <label for="newsUrl">
+                        <span class="label-icon">🔗</span> Or paste URL (optional)
+                    </label>
+                    <input type="url" id="newsUrl" placeholder="https://example.com/article">
+                </div>
+
+                <div class="action-area">
+                    <button id="analyzeBtn" class="btn-primary">
+                        <span class="btn-text">Analyze News</span>
+                        <span class="btn-icon">⚡</span>
+                    </button>
+                </div>
+
+                <!-- Loading spinner -->
+                <div id="loadingOverlay" class="loading-overlay hidden">
+                    <div class="spinner"></div>
+                    <p>AI model is analyzing...</p>
+                </div>
+
+                <!-- Result card (dynamic) -->
+                <div id="resultCard" class="result-card hidden">
+                    <div class="result-header">
+                        <span id="verdictIcon" class="verdict-icon"></span>
+                        <h3 id="verdictText" class="verdict-text">—</h3>
+                    </div>
+                    <div class="confidence-wrapper">
+                        <span class="confidence-label">Confidence Score</span>
+                        <div class="progress-bar-bg">
+                            <div id="confidenceFill" class="progress-fill" style="width: 0%;"></div>
+                        </div>
+                        <span id="confidencePercent" class="confidence-value">0%</span>
+                    </div>
+                    <div id="suspiciousHighlights" class="suspicious-section">
+                        <div class="suspicious-title">🔍 Suspicious signals detected</div>
+                        <ul id="suspiciousList" class="suspicious-list"></ul>
+                    </div>
+                </div>
+
+                <!-- Error toast -->
+                <div id="errorToast" class="error-toast hidden">
+                    <span>⚠️</span> <span id="errorMsg">Something went wrong</span>
+                </div>
+            </div>
+
+            <div class="info-footer">
+                <div class="feature-badge">✔️ TF-IDF + Logistic Regression</div>
+                <div class="feature-badge">⚡ Real-time predictions</div>
+                <div class="feature-badge">🎯 Confidence scoring</div>
+            </div>
+        </main>
+    </div>
+
+    <script src="UI.js">
+
+    </script>
+</body>
+</html>
